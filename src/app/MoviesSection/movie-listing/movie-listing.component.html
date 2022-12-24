@@ -1,0 +1,40 @@
+<div class="container">
+
+
+
+<h1>Movie Listing @ GV Cinema</h1>
+
+
+<div class="col-md-6 col-sm-12">
+
+
+<!-- <label for="typeahead-format">Search for a :</label> -->
+<input id="typeahead-format" (ngModelChange)="MoveList($event)" placeholder="Search Movies..." type="search"
+  class="form-control" [(ngModel)]="model"
+ [ngbTypeahead]="search"
+  [resultFormatter]="formatter" />
+</div>
+<hr>
+<!-- <pre>Model: {{ model | json }}</pre> -->
+
+<h2>Popular Movies this month</h2>
+<div class="row">
+
+<div class="col-lg-3 col-md-4 col-sm-6 col-12 " *ngFor="let item of MovieList; let i=index">
+<div class="card shadow-sm" routerLink='/MovieDetials' [queryParams]="{id: item.id}">
+  <img class="card-img-top" src="https://via.placeholder.com/150/d32776" [alt]="item.name" >
+  <div class="card-body">
+    <h4 class="card-text text-overflow" placement="top" ngbTooltip="{{item.name}}" [title]="item.name">{{item.name}}
+    </h4>
+    <p class="card-text"> <strong> {{item.duration}}</strong> min</p>
+    <p class="card-text">User Rating:<strong> {{item.userRating}}</strong> </p>
+    <!-- <p >Some quick example text to build on the card title and make up the bulk of the card's content. -->
+    <!-- </p> -->
+  </div>
+</div>
+<img >
+
+
+</div>
+</div>
+</div>

@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Movie Listing @ GV Cinema</h1>
+  <button type="button" class="btn btn-primary" routerLink="">Back</button>
+
+  <h2> {{MovieDetial?.name }}</h2>
+  <p>({{MovieDetial?.mpaaRating?.type}}: <strong> {{ MovieDetial?.mpaaRating?.label}}</strong>) </p>
+  <hr>
+  <div class="row">
+    <div class="col-md-4  col-12">
+      <div class="shadow-sm">
+        <img class="card-img-top h-100" src="https://via.placeholder.com/150/d32776" [alt]="MovieDetial?.name">
+
+      </div>
+    </div>
+    <div class="col-md-8  col-12 mt-2">
+      <h3>Details</h3>
+      <p>Genere: <strong>{{ArrayToString(MovieDetial?.genre)}} </strong> </p>
+      <p>Duration: <strong>{{MovieDetial?.duration}} </strong> minutes</p>
+      <p>Use Rating: <strong>{{MovieDetial?.userRating}} </strong> </p>
+      <h3> Synopsis </h3>
+      <p>{{MovieDetial?.description}}</p>
+
+    </div>
+  </div>
+</div>

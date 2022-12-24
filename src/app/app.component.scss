@@ -1,0 +1,7 @@
+@import '~normalize.css';
+.text-overflow{
+ white-space: nowrap;
+ overflow: hidden;
+ text-overflow: ellipsis;
+
+}
